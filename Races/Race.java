@@ -1,3 +1,5 @@
+package Races;
+
 public class Race
 {
 	String[] fNames, lNames;

@@ -5,7 +5,9 @@ public class Application
 	{
 
 		Character test = new Character();
-		System.out.println(test.alignment);
+		System.out.println("Hi, my name is " + test.firstName + " " + test.lastName + 
+		", but you can just call me " +  test.generatePrefix() + " " + test.lastName + 
+		". I am " + test.alignment + ".");
 
 	}
 }
