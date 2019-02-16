@@ -1,16 +1,22 @@
 import Races.*;
+import java.util.ArrayList; // import the ArrayList class
+
 
 public class Character
 {
 	//Dwarf, Elf, Gnome, Half-Elf, Hafling, Half-Orc, Human, Tiefling
 	String firstName, lastName, alignment;
 	boolean gender = true; //True for male, false for female
-	Dwarf test = new Dwarf();
+	ArrayList<Race> races = new ArrayList<Race>(); // Create an ArrayList object
+	final int raceNumber = 2;
+
+
 	public Character()
 	{
+		generateRace();
 		this.alignment = generateAlignment();
-		this.firstName = test.nameGen(gender,"first");
-		this.lastName = test.nameGen(gender,"last");
+		this.firstName = races.get(0).nameGen(gender,"first");
+		this.lastName = races.get(0).nameGen(gender,"last");
 
 	}
 
@@ -31,4 +37,22 @@ public class Character
 	{
 		return gender ? "Mr." : "Mrs.";
 	}
+
+
+	public void generateRace()
+	{
+
+		switch((int) (Math.random() * (raceNumber + 1)))
+		{
+			case 0:
+			races.add(new Dwarf());
+			break;
+
+			case 1:
+			races.add(new Elf());
+			break;
+		}
+	}
+
+
 }

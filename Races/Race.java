@@ -1,7 +1,6 @@
 package Races;
 
-public class Race
+public abstract class Race
 {
-	String[] fNames, lNames;
-	byte Alignment;
+	abstract void nameGen();
 }
